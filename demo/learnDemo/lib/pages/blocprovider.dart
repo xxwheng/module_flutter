@@ -7,13 +7,15 @@ class BlocProvider extends InheritedWidget {
   BlocProvider({Key key, Widget child}):super(key:key, child: child);
 
   @override
-  bool updateShouldNotify(InheritedWidget oldWidget) {
-    // return oldWidget.child != child;
+  bool updateShouldNotify(InheritedWidget old) {
+    return old.child != child;
     return true;
   }
 
   static CountBLoc of(BuildContext context) {
-    return (context.inheritFromWidgetOfExactType(BlocProvider) as BlocProvider).bLoc;
+    return (context.dependOnInheritedWidgetOfExactType<BlocProvider>()).bLoc;
   }
+  
+  
   
 }

@@ -2,13 +2,8 @@
 import 'dart:async';
 
 class CountBLoc {
-  int _count;
+  int _count = 0;
   var _countController = StreamController<int>.broadcast() ;
-
-  CountBLoc() {
-    _count = 0;
-    _countController = StreamController<int>();
-  }
 
   Stream<int> get stream => _countController.stream;
   int get value => _count;

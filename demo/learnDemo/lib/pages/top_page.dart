@@ -2,7 +2,19 @@ import 'package:flutter/material.dart';
 import 'blocprovider.dart';
 import 'under_page.dart';
 
-class TopPage extends StatelessWidget {
+class TopPage extends StatefulWidget {
+  @override
+  _TopPageState createState() => _TopPageState();
+}
+
+class _TopPageState extends State<TopPage> {
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print("TopPage Dependencies change");
+  }
+
   @override
   Widget build(BuildContext context) {
 
